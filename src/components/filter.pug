@@ -1,0 +1,14 @@
+.filter-select.flex.justify-center
+  label.inline-flex.items-center.text-sm.font-medium.text-blue-900.mr-4(for='category') Choose category:
+  .relative.flex-1
+    select#category.w-full.appearance-none.py-2.px-3.border.border-gray-300.bg-white.rounded-md.shadow-sm(name='category' autocomplete='country' class='focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm')
+      option(value='business') business
+      option(value='entertainment') entertainment
+      option(value='general' selected='') general
+      option(value='health') health
+      option(value='science') science
+      option(value='sports') sports
+      option(value='technology') technology
+    span.absolute.right-0.top-0.h-full.w-10.text-center.text-gray-600.pointer-events-none.flex.items-center.justify-center
+      svg.w-4.h-4(fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewbox='0 0 24 24')
+        path(d='M6 9l6 6 6-6')

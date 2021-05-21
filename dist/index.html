@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="index.css" rel="stylesheet" media="all">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" media="all">
+  <!--link(href='/tailwind.css' rel='stylesheet' media='all')-->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&amp;display=swap" rel="stylesheet">
+  <title>News app</title>
+</head>
+<body>
+  <div class="flex flex-col h-screen">
+    <!--header.d-flex.flex-column.flex-md-row.align-items-center.p-3.px-md-4.mb-3.bg-body.border-bottom.shadow-sm-->
+    <!--  p.h5.my-0.me-md-auto.fw-normal Company name 4-->
+    <!--  nav.my-2.my-md-0.me-md-3-->
+    <!--    a.p-2.text-dark(href='#') Features-->
+    <!--    a.p-2.text-dark(href='#') Enterprise-->
+    <!--    a.p-2.text-dark(href='#') Support-->
+    <!--    a.p-2.text-dark(href='#') Pricing-->
+    <!--  a.btn.btn-outline-primary(href='#') Sign up-->
+    <header class="text-gray-600 body-font bg-blue-50">
+      <div class="container mx-auto flex flex-wrap p-5 flex-col items-center md:flex-row"><a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+          <svg class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg><span class="ml-3 text-xl">News app</span></a>
+        <nav class="flex flex-wrap items-center text-base justify-center md:ml-auto"><a class="mr-5 hover:text-gray-900">First Link</a><a class="mr-5 hover:text-gray-900">Second Link</a><a class="mr-5 hover:text-gray-900">Third Link</a><a class="mr-5 hover:text-gray-900">Fourth Link</a></nav>
+        <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 rounded text-base mt-4 focus:outline-none hover:bg-gray-200 md:mt-0">Button
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+    <div id="content">
+      <div class="container pt-16 pb-24 mx-auto">
+        <form class="flex flex-wrap -mx-6 -my-8 mb-16 bg-blue-100" name="newsControls">
+          <div class="py-8 px-6 lg:w-1/2">
+            <div class="filter-select flex justify-center">
+              <label class="inline-flex items-center text-sm font-medium text-blue-900 mr-4" for="category">Choose category:</label>
+              <div class="relative flex-1">
+                <select class="w-full appearance-none py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" id="category" name="category" autocomplete="country">
+                  <option value="business">business</option>
+                  <option value="entertainment">entertainment</option>
+                  <option value="general" selected="">general</option>
+                  <option value="health">health</option>
+                  <option value="science">science</option>
+                  <option value="sports">sports</option>
+                  <option value="technology">technology</option>
+                </select><span class="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg></span>
+              </div>
+            </div>
+          </div>
+          <div class="py-8 px-6 lg:w-1/2">
+            <div class="search flex">
+              <label class="inline-flex items-center text-sm font-medium text-blue-900 mr-4" for="search">Search:</label>
+              <input class="w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" id="search" type="text" name="search">
+              <div class="ml-4 flex items-end">
+                <button class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-800 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" type="submit">Search</button>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="news-loader flex flex-wrap -mx-6 -my-8 bg-gray-50">
+          <div class="py-8 px-6 lg:w-1/3">
+            <div class="h-full flex items-start animate-pulse">
+              <div class="w-12 flex-shrink-0 flex flex-col text-center leading-none"><span class="pb-2 mb-2 border-b-2 border-gray-200">
+                  <div class="h-4 w-10 bg-blue-200 rounded m-auto"></div></span>
+                <div class="h-5 w-5 bg-blue-200 rounded m-auto"></div>
+              </div>
+              <div class="flex-grow pl-6">
+                <div class="h-4 bg-indigo-500 rounded mb-3 w-1/4"></div>
+                <div class="h-6 bg-blue-400 rounded mb-6"></div>
+                <div class="h-4 bg-blue-200 rounded mb-2"></div>
+                <div class="h-4 bg-blue-200 rounded mb-2"></div>
+                <div class="h-4 bg-blue-200 rounded mb-6"></div><a class="inline-flex items-center">
+                  <div class="bg-blue-200 w-10 h-10 rounded-full flex-shrink-0"></div>
+                  <div class="h-4 w-32 bg-blue-200 rounded ml-3"></div></a>
+              </div>
+            </div>
+          </div>
+          <div class="py-8 px-6 lg:w-1/3">
+            <div class="h-full flex items-start animate-pulse">
+              <div class="w-12 flex-shrink-0 flex flex-col text-center leading-none"><span class="pb-2 mb-2 border-b-2 border-gray-200">
+                  <div class="h-4 w-10 bg-blue-200 rounded m-auto"></div></span>
+                <div class="h-5 w-5 bg-blue-200 rounded m-auto"></div>
+              </div>
+              <div class="flex-grow pl-6">
+                <div class="h-4 bg-indigo-500 rounded mb-3 w-1/4"></div>
+                <div class="h-6 bg-blue-400 rounded mb-6"></div>
+                <div class="h-4 bg-blue-200 rounded mb-2"></div>
+                <div class="h-4 bg-blue-200 rounded mb-2"></div>
+                <div class="h-4 bg-blue-200 rounded mb-6"></div><a class="inline-flex items-center">
+                  <div class="bg-blue-200 w-10 h-10 rounded-full flex-shrink-0"></div>
+                  <div class="h-4 w-32 bg-blue-200 rounded ml-3"></div></a>
+              </div>
+            </div>
+          </div>
+          <div class="py-8 px-6 lg:w-1/3">
+            <div class="h-full flex items-start animate-pulse">
+              <div class="w-12 flex-shrink-0 flex flex-col text-center leading-none"><span class="pb-2 mb-2 border-b-2 border-gray-200">
+                  <div class="h-4 w-10 bg-blue-200 rounded m-auto"></div></span>
+                <div class="h-5 w-5 bg-blue-200 rounded m-auto"></div>
+              </div>
+              <div class="flex-grow pl-6">
+                <div class="h-4 bg-indigo-500 rounded mb-3 w-1/4"></div>
+                <div class="h-6 bg-blue-400 rounded mb-6"></div>
+                <div class="h-4 bg-blue-200 rounded mb-2"></div>
+                <div class="h-4 bg-blue-200 rounded mb-2"></div>
+                <div class="h-4 bg-blue-200 rounded mb-6"></div><a class="inline-flex items-center">
+                  <div class="bg-blue-200 w-10 h-10 rounded-full flex-shrink-0"></div>
+                  <div class="h-4 w-32 bg-blue-200 rounded ml-3"></div></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="news-container flex flex-wrap -mx-6 -my-8 bg-gray-50"></div>
+      </div>
+    </div>
+    <footer class="text-gray-600 body-font bg-blue-300 mt-auto">
+      <div class="container px-5 py-8 mx-auto flex items-center flex-col sm:flex-row"><a class="flex title-font font-medium items-center justify-center text-gray-900 md:justify-start">
+          <svg class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg><span class="ml-3 text-xl">News app</span></a>
+        <p class="text-sm text-blue-50 mt-4 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0">&copy; 2021 Irina Sorokina</p>
+      </div>
+    </footer>
+  </div>
+  <script src="index.js"></script>
+</body>
